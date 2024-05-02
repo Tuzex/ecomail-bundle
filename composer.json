@@ -1,5 +1,5 @@
 {
-    "name": "tuzex/ecomai-bundle",
+    "name": "tuzex/ecomail-bundle",
     "description": "Integration of ECOMAIL API",
     "type": "symfony-bundle",
     "license": "MIT",
