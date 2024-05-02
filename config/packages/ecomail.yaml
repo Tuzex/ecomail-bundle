@@ -1,3 +1,0 @@
-ecomail:
-  api:
-    key: '%env(ECOMAIL_API_KEY)%'
