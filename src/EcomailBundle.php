@@ -16,22 +16,17 @@ final class EcomailBundle extends AbstractBundle
     {
         $definition->rootNode()
             ->children()
-            ->arrayNode('ecomail')
-            ->children()
-            ->arrayNode('api')
-            ->children()
-            ->scalarNode('key')->end()
+            ->scalarNode('api_key')
             ->end()
-            ->end()
-            ->end() // twitter
             ->end();
     }
 
     public function loadExtension(array $config, ContainerConfigurator $container, ContainerBuilder $builder): void
     {
         $container->services()
-            ->get(Ecomail::class)
-            ->arg(0, $config['ecomail']['api']['key'])
-        ;
+            ->set('Ecomail', Ecomail::class)
+            ->args([
+                $config['api_key'],
+            ]);
     }
 }
